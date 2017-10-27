@@ -11,7 +11,7 @@
 </head>
 <body>
 <center>
-<img id="logo" src="img/logo.png" alt="fuck">
+<a href="http://www.openmindsclub.net/"><img id="logo" src="img/logo.png" alt="OpenMindsClub logo"></a>
 </center>
         <div id="container">
                 <h1 id="welcome">Welcome to OpenMindsClub's mirror!</h1>
@@ -20,7 +20,7 @@
                     <a target="_blank" href="http://m.openmindsclub.net/sources.list">Xenial (16.04)</a>
                 </div>
                 <div id="download_source">
-            <a  href="#tree">Download ISOs</a>
+            <a  onclick="move()">Download ISOs</a>
                 </div>
 <center>
                 <div id="instructions">
@@ -102,21 +102,23 @@ function copyToClipboard(elem) {
 }
 </script>
 
-<div id="tree">
-    <div class="chart" id="theTree" ></div>
+<div id="tree"></div>
+<div class="chart" id="theTree" ></div>
+    
     <script src="js/vendor/raphael.js"></script>
     <script src="js/Treant.js"></script>
-
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/jquery.easing.js"></script>
-
-
     <script src="js/collapsable.js"></script>
     <script>
     tree = new Treant( chart_config );
+    function move() {
+        var aTag = $("#tree");
+        $('html,body').animate({scrollTop: aTag.offset().top},1000);
+       
+    }
     </script>
-
-    </div>
+   
 </body>
 </html>
 
